@@ -1,0 +1,6 @@
+{
+  "name": "Hero Section Médica",
+  "description": "Hero section moderna, elegante e responsiva para site médico e clínica de alto padrão com integração WhatsApp e agendamento.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
