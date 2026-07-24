@@ -75,33 +75,44 @@ color:#d4af37;
 }
 
 .hero{
-padding: 140px 0 80px 0;
-background: #111;
-display: flex;
-align-items: center;
+  padding: 140px 0 80px 0;
+  background: #111;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Cria duas colunas no computador: foto de um lado, texto do outro */
+.hero .container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
 }
 
 .hero-img{
-width: 100%;
-max-width: 600px;
-border-radius: 15px;
-margin-bottom: 30px;
-display: block;
+  width: 100%;
+  border-radius: 20px;
+  display: block;
 }
 
-.hero-content{
-max-width:650px;
-}
+/* No celular, muda para uma coluna só (foto em cima, texto embaixo) */
+@media(max-width: 768px){
+  .hero .container{
+    grid-template-columns: 1fr;
+  }
+  
+  nav ul{
+    display: none;
+  }
 
-.hero h1{
-font-size:58px;
-margin-bottom:20px;
-}
+  .hero h1{
+    font-size: 40px;
+  }
 
-.hero p{
-font-size:20px;
-line-height:1.7;
-margin-bottom:35px;
+  .about{
+    grid-template-columns: 1fr;
+  }
 }
 
 .btn{
