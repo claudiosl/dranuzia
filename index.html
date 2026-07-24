@@ -1,252 +1,463 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Drª. Jeflanuzia Leite - sexologa</title>
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Barber Prime | Barbearia Premium</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#111;
+color:#fff;
+}
+
+header{
+position:fixed;
+width:100%;
+top:0;
+left:0;
+background:rgba(0,0,0,.85);
+backdrop-filter:blur(10px);
+z-index:999;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 0;
+}
+
+.logo{
+font-size:28px;
+font-weight:700;
+color:#d4af37;
+}
+
+nav ul{
+display:flex;
+gap:30px;
+list-style:none;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+transition:.3s;
+}
+
+nav a:hover{
+color:#d4af37;
+}
+
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+url('https://images.unsplash.com/photo-1622287162716-f311baa1a2b8?auto=format&fit=crop&w=1600&q=80');
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+}
+
+.hero-content{
+max-width:650px;
+}
+
+.hero h1{
+font-size:58px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:20px;
+line-height:1.7;
+margin-bottom:35px;
+}
+
+.btn{
+display:inline-block;
+background:#d4af37;
+color:#111;
+padding:15px 35px;
+border-radius:50px;
+font-weight:bold;
+text-decoration:none;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-4px);
+}
+
+section{
+padding:100px 0;
+}
+
+.title{
+text-align:center;
+font-size:40px;
+margin-bottom:60px;
+}
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.card{
+background:#1d1d1d;
+padding:35px;
+border-radius:18px;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card h3{
+margin-bottom:15px;
+color:#d4af37;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+height:300px;
+object-fit:cover;
+border-radius:15px;
+}
+
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+}
+
+.about img{
+width:100%;
+border-radius:20px;
+}
+
+.about p{
+line-height:1.8;
+}
+
+.testimonials{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.testimonial{
+background:#1c1c1c;
+padding:30px;
+border-radius:15px;
+}
+
+.contact{
+text-align:center;
+}
+
+.contact p{
+margin:15px 0;
+font-size:18px;
+}
+
+footer{
+background:#000;
+padding:30px;
+text-align:center;
+}
+
+.whatsapp{
+position:fixed;
+right:20px;
+bottom:20px;
+background:#25D366;
+width:65px;
+height:65px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+font-size:30px;
+text-decoration:none;
+color:white;
+box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+
+@media(max-width:768px){
+
+nav ul{
+display:none;
+}
+
+.hero h1{
+font-size:40px;
+}
+
+.about{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
 </head>
-<body class="bg-slate-50 text-slate-900 antialiased min-h-screen flex flex-col selection:bg-[#0F3D66] selection:text-white">
+<body>
 
-  <!-- HEADER -->
-  <header class="sticky top-0 z-50 bg-[#0F3D66]/95 backdrop-blur-md text-white border-b border-white/10 shadow-md">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16 sm:h-20">
-        <!-- Logo / Name -->
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center shadow-inner">
-            <i data-lucide="stethoscope" class="w-5 h-5 sm:w-6 sm:h-6 text-emerald-400"></i>
-          </div>
-          <div>
-            <h1 class="font-bold text-base sm:text-xl tracking-tight text-white leading-tight">Dr. Gabriel Santos</h1>
-            <p class="text-xs text-blue-200 font-medium">CRM 148.920 • SP</p>
-          </div>
-        </div>
+<header>
 
-        <!-- Contact CTA -->
-        <div class="flex items-center gap-2 sm:gap-4">
-          <a id="headerWhatsappBtn" href="https://wa.me/5571991168033?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20m%C3%A9dica." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white text-xs sm:text-sm font-semibold px-3 py-2 sm:px-5 sm:py-2.5 rounded-full shadow-lg shadow-emerald-900/20 transition-all hover:scale-105">
-            <i data-lucide="message-circle" class="w-4 h-4 text-white"></i>
-            <span class="hidden xs:inline">Agendar Consulta</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </header>
+<div class="container">
 
-  <!-- MAIN CONTENT -->
-  <main class="flex-1">
-    <!-- HERO SECTION -->
-    <section class="relative bg-gradient-to-b from-[#0F3D66] via-[#124B7C] to-slate-900 text-white py-12 sm:py-20 lg:py-24 overflow-hidden">
-      <!-- Background pattern decor -->
-      <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
-      
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          
-          <!-- Text Content -->
-          <div class="lg:col-span-7 space-y-6 sm:space-y-8 text-center lg:text-left">
-            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-blue-200 text-xs sm:text-sm font-medium backdrop-blur-sm">
-              <i data-lucide="award" class="w-4 h-4 text-emerald-400"></i>
-              <span>Atendimento Médica Tesuda & Gostosa</span>
-            </div>
+<nav>
 
-            <h2 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
-              Sua saúde cardiovascular em <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">mãos de confiança</span>.
-            </h2>
+<div class="logo">BARBER PRIME</div>
 
-            <p class="text-base sm:text-xl text-blue-100 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
-              Consultas especializadas em Cardiologia e Medicina Preventiva com foco em diagnóstico preciso, prevenção e cuidado individualizado.
-            </p>
+<ul>
 
-            <!-- Buttons -->
-            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-              <a href="https://wa.me/5571991168033?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20m%C3%A9dica." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-emerald-500 hover:bg-emerald-600 text-white text-base sm:text-lg font-bold px-8 py-4 rounded-2xl shadow-xl shadow-emerald-950/40 transition-all hover:scale-105 group">
-                <i data-lucide="message-circle" class="w-6 h-6 text-white group-hover:rotate-12 transition-transform"></i>
-                <span>Agendar Consulta no WhatsApp</span>
-              </a>
-            </div>
+<li><a href="#inicio">Início</a></li>
+<li><a href="#servicos">Serviços</a></li>
+<li><a href="#sobre">Sobre</a></li>
+<li><a href="#galeria">Galeria</a></li>
+<li><a href="#contato">Contato</a></li>
 
-            <!-- Highlights -->
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-white/10">
-              <div class="flex items-center gap-3 text-left">
-                <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
-                  <i data-lucide="shield-check" class="w-5 h-5 text-emerald-400"></i>
-                </div>
-                <div>
-                  <h3 class="font-bold text-sm text-white">Exames no Local</h3>
-                  <p class="text-xs text-blue-200">Ecocardiograma e ECG</p>
-                </div>
-              </div>
-              <div class="flex items-center gap-3 text-left">
-                <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
-                  <i data-lucide="clock" class="w-5 h-5 text-emerald-400"></i>
-                </div>
-                <div>
-                  <h3 class="font-bold text-sm text-white">Pontualidade</h3>
-                  <p class="text-xs text-blue-200">Atendimento sem esperas</p>
-                </div>
-              </div>
-              <div class="flex items-center gap-3 text-left">
-                <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
-                  <i data-lucide="heart-pulse" class="w-5 h-5 text-emerald-400"></i>
-                </div>
-                <div>
-                  <h3 class="font-bold text-sm text-white">Acompanhamento</h3>
-                  <p class="text-xs text-blue-200">Plano preventivo completo</p>
-                </div>
-              </div>
-            </div>
-          </div>
+</ul>
 
-          <!-- Doctor Image Column -->
-          <div class="lg:col-span-5 relative">
-            <div class="relative max-w-md mx-auto">
-              <!-- Glow -->
-              <div class="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-[32px] sm:rounded-[40px] blur-xl opacity-30"></div>
-              
-              <div class="relative aspect-[3/4] rounded-[28px] sm:rounded-[36px] overflow-hidden bg-slate-800 shadow-2xl border border-white/20 group">
-                <!-- Input oculto para carregar foto do computador -->
-                <input type="file" id="photoInput" accept="image/*" class="hidden">
+</nav>
 
-                <img id="doctorImg" src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=800" alt="Foto do Médico" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105">
+</div>
 
-                <!-- Gradient Overlay -->
-                <div class="absolute inset-0 bg-gradient-to-t from-[#0F3D66]/60 via-transparent to-transparent"></div>
+</header>
 
-                <!-- Botão de Trocar Foto -->
-                <button onclick="document.getElementById('photoInput').click()" type="button" class="absolute top-4 right-4 bg-white/95 hover:bg-white text-[#0F3D66] font-semibold text-xs px-3.5 py-2 rounded-full shadow-lg border border-white/80 flex items-center gap-1.5 transition-all hover:scale-105 cursor-pointer z-30">
-                  <i data-lucide="camera" class="w-4 h-4 text-blue-600"></i>
-                  <span>Trocar foto</span>
-                </button>
+<section class="hero" id="inicio">
 
-                <!-- Floating Badge -->
-                <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md px-4 py-3 rounded-2xl border border-white/60 shadow-lg flex items-center justify-between">
-                  <div>
-                    <p class="font-bold text-slate-900 text-sm sm:text-base">Dr. Gabriel Santos</p>
-                    <p class="text-xs text-slate-600">Cardiologia & Medicina Preventiva</p>
-                  </div>
-                  <div class="flex items-center gap-1 bg-amber-50 px-2.5 py-1 rounded-full border border-amber-200">
-                    <i data-lucide="star" class="w-3.5 h-3.5 text-amber-500 fill-amber-500"></i>
-                    <span class="text-xs font-bold text-amber-900">5.0</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+<div class="container">
 
-        </div>
-      </div>
-    </section>
+<div class="hero-content">
 
-    <!-- STATS -->
-    <section class="py-12 bg-white border-b border-slate-200">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100">
-            <p class="text-3xl sm:text-4xl font-extrabold text-[#0F3D66]">+10 anos</p>
-            <p class="text-xs sm:text-sm text-slate-600 font-medium mt-1">de experiência clínica</p>
-          </div>
-          <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100">
-            <p class="text-3xl sm:text-4xl font-extrabold text-[#0F3D66]">+5.000</p>
-            <p class="text-xs sm:text-sm text-slate-600 font-medium mt-1">pacientes atendidos</p>
-          </div>
-          <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100">
-            <p class="text-3xl sm:text-4xl font-extrabold text-[#0F3D66]">99.8%</p>
-            <p class="text-xs sm:text-sm text-slate-600 font-medium mt-1">de satisfação médica</p>
-          </div>
-          <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100">
-            <p class="text-3xl sm:text-4xl font-extrabold text-[#0F3D66]">100%</p>
-            <p class="text-xs sm:text-sm text-slate-600 font-medium mt-1">foco em prevenção</p>
-          </div>
-        </div>
-      </div>
-    </section>
+<h1>Seu estilo começa aqui.</h1>
 
-    <!-- ABOUT SECTION -->
-    <section class="py-16 sm:py-24 bg-slate-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-3xl mx-auto text-center space-y-4 mb-12">
-          <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">Atendimento humanizado e focado em você</h2>
-          <p class="text-slate-600 text-base sm:text-lg">O cuidado com o seu coração exige tempo, escuta atenta e tecnologia avançada para diagnóstico precoce.</p>
-        </div>
+<p>
+Cortes modernos, barba impecável e atendimento de alto nível para quem valoriza aparência e personalidade.
+</p>
 
-        <div class="grid md:grid-cols-3 gap-8">
-          <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
-            <div class="w-12 h-12 rounded-2xl bg-blue-50 text-[#0F3D66] flex items-center justify-center mb-6">
-              <i data-lucide="stethoscope" class="w-6 h-6"></i>
-            </div>
-            <h3 class="text-xl font-bold text-slate-900 mb-2">Consulta Detalhada</h3>
-            <p class="text-slate-600 text-sm leading-relaxed">Avaliação completa do seu histórico de saúde, estilo de vida e fatores de risco genéticos.</p>
-          </div>
+<a class="btn" href="https://wa.me/5500000000000">
+Agendar Horário
+</a>
 
-          <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
-            <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-6">
-              <i data-lucide="activity" class="w-6 h-6"></i>
-            </div>
-            <h3 class="text-xl font-bold text-slate-900 mb-2">Exames de Check-up</h3>
-            <p class="text-slate-600 text-sm leading-relaxed">Acompanhamento através de exames modernos para prevenção de doenças vasculares.</p>
-          </div>
+</div>
 
-          <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
-            <div class="w-12 h-12 rounded-2xl bg-teal-50 text-teal-600 flex items-center justify-center mb-6">
-              <i data-lucide="heart-handshake" class="w-6 h-6"></i>
-            </div>
-            <h3 class="text-xl font-bold text-slate-900 mb-2">Plano Personalizado</h3>
-            <p class="text-slate-600 text-sm leading-relaxed">Orientações sob medida para melhoria da qualidade de vida e prevenção a longo prazo.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+</div>
 
-  <!-- FOOTER -->
-  <footer class="bg-slate-900 text-white py-12 border-t border-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-      <div class="flex items-center justify-center gap-2">
-        <i data-lucide="stethoscope" class="w-6 h-6 text-emerald-400"></i>
-        <span class="font-bold text-lg text-white">Dr. Gabriel Santos</span>
-      </div>
-      <p class="text-slate-400 text-sm max-w-md mx-auto">CRM 148.920 • SP | Especialista em Cardiologia e Medicina Preventiva</p>
-      <p class="text-slate-500 text-xs">© 2026 Todos os direitos reservados.</p>
-    </div>
-  </footer>
+</section>
 
-  <!-- SCRIPT PARA TROCA DE FOTO E NAVEGAÇÃO -->
-  <script>
-    // Inicializar Ícones Lucide
-    lucide.createIcons();
+<section id="servicos">
 
-    // Troca de Foto
-    const photoInput = document.getElementById('photoInput');
-    const doctorImg = document.getElementById('doctorImg');
+<div class="container">
 
-    // Carregar foto do LocalStorage se existir
-    const savedPhoto = localStorage.getItem('doctor_custom_photo');
-    if (savedPhoto) {
-      doctorImg.src = savedPhoto;
-    }
+<h2 class="title">Nossos Serviços</h2>
 
-    photoInput.addEventListener('change', (e) => {
-      const file = e.target.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = (evt) => {
-          doctorImg.src = evt.target.result;
-          localStorage.setItem('doctor_custom_photo', evt.target.result);
-        };
-        reader.readAsDataURL(file);
-      }
-    });
-  </script>
+<div class="services">
+
+<div class="card">
+<h3>Corte Masculino</h3>
+<p>Cortes clássicos e modernos com acabamento profissional.</p>
+</div>
+
+<div class="card">
+<h3>Barba Premium</h3>
+<p>Modelagem completa com toalha quente e produtos especiais.</p>
+</div>
+
+<div class="card">
+<h3>Combo Corte + Barba</h3>
+<p>Experiência completa para renovar seu visual.</p>
+</div>
+
+<div class="card">
+<h3>Pigmentação</h3>
+<p>Realce natural para barba e cabelo.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="sobre">
+
+<div class="container">
+
+<h2 class="title">Sobre Nós</h2>
+
+<div class="about">
+
+<img src="https://images.unsplash.com/photo-1517832606299-7ae9b720a186?auto=format&fit=crop&w=900&q=80">
+
+<div>
+
+<p>
+
+Há anos transformando autoestima através de cortes modernos, técnicas atualizadas e atendimento personalizado.
+
+Nossa missão é entregar muito mais do que um corte de cabelo. Queremos proporcionar uma experiência única para cada cliente.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="galeria">
+
+<div class="container">
+
+<h2 class="title">Galeria</h2>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=900&q=80">
+
+<img src="https://images.unsplash.com/photo-1512690459411-b0fd1c86b8d4?auto=format&fit=crop&w=900&q=80">
+
+<img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=900&q=80">
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2 class="title">O que dizem nossos clientes</h2>
+
+<div class="testimonials">
+
+<div class="testimonial">
+
+★★★★★
+
+<p>
+
+"Ambiente incrível e atendimento impecável."
+
+</p>
+
+<strong>João Silva</strong>
+
+</div>
+
+<div class="testimonial">
+
+★★★★★
+
+<p>
+
+"Melhor corte que já fiz."
+
+</p>
+
+<strong>Carlos Oliveira</strong>
+
+</div>
+
+<div class="testimonial">
+
+★★★★★
+
+<p>
+
+"Profissionais muito qualificados."
+
+</p>
+
+<strong>Marcos Santos</strong>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contato">
+
+<div class="container contact">
+
+<h2 class="title">Contato</h2>
+
+<p>📍 Rua Exemplo, 100</p>
+
+<p>📞 (71) 99999-9999</p>
+
+<p>✉ contato@barberprime.com.br</p>
+
+<a class="btn" href="https://wa.me/5500000000000">
+
+Agendar pelo WhatsApp
+
+</a>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 Barber Prime • Todos os direitos reservados.
+
+</footer>
+
+<a class="whatsapp" href="https://wa.me/5500000000000">
+
+💬
+
+</a>
+
 </body>
 </html>
